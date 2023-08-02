@@ -58,4 +58,7 @@ python3 {nameOfTheExerciseFile}.py
 ```
 ## Furthermore: ##
 I wrote these scripts using the VSCode IDE, on a Linux Ubuntu 20.04, with PHP 7.4 and Python 3.8 installed on the host.
-I didn't use docker nor any kind of encapsulated environment or virtualization. I haven't tested the scripts in other OS.
+
+I didn't use docker nor any kind of encapsulated environment or virtualization. 
+
+I haven't tested the scripts in other OS.
