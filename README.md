@@ -40,7 +40,7 @@ values and display the final value.
 
 ## Languages used: ##
 The test is for an opportunity as a PHP developer, but, as I have interest in work with Python, as well, 
-I choose to use Python in half of the exercises. The other half is written in PHP.
+I chose to use Python in half of the exercises. The other half is written in PHP.
 
 ## Requirements: ##
 - PHP 7+
