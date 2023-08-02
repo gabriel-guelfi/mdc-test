@@ -56,6 +56,28 @@ function readNumber($message)
 }
 
 /** 
+ * Perform an arithmetic calculation:
+ * 
+ * @param mixed $firstNumber
+ * @param string $operator
+ * @param mixed $lastNumber
+ * 
+ * @return mixed 
+ */
+function calc($firstNumber, $operator, $lastNumber)
+{
+    $result = 0;
+
+    // Check for division by zero:
+    if ($operator == '/' && $lastNumber == 0) throw new Exception("ERROR: You cannot divide by zero.");
+
+    // Perform the calculation:
+    eval('$result = ' . $firstNumber . $operator . $lastNumber . ';');
+
+    return $result;
+}
+
+/** 
  * Greets the user, shows user guides, prompts the user for input, then print the result.
  * 
  * @return void 
@@ -77,13 +99,18 @@ function init()
     $operator = readOperator();
     $lastNumber = readNumber("Insert the second number:");
 
-    // Calculate the result:
-    $result = 0;
-    eval('$result = ' . $firstNumber . $operator . $lastNumber . ';');
-
-    // Print the result:
     printLn();
-    printLn("Your result is: {$result}");
+
+    try {
+        // Calculate the result:
+        $result = calc($firstNumber, $operator, $lastNumber);
+
+        // Print the result:
+        printLn("Your result is: {$result}");
+    } catch (Exception $exc) {
+        // Print error message:
+        printLn($exc->getMessage());
+    }
 }
 
 // Init the application.
